@@ -73,6 +73,10 @@ var localStoragePorts = require("elm-localstorage-ports");
 localStoragePorts.register(myElmApp.ports);
 ```
 
+## API Reference
+
+[View the full API reference here.](./API.md)
+
 ## Questions or Problems?
 
 Feel free to create an issue in the [GitHub issue tracker](https://github.com/knledg/elm-localstorage-ports/issues).
