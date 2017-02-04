@@ -1,12 +1,16 @@
 {
   "name": "elm-localstorage-ports",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "Generic Elm ports for interacting with LocalStorage",
   "main": "lib/js/local-storage.js",
   "scripts": {
     "build": "node_modules/babel-cli/bin/babel.js  src/ --out-dir lib/js/",
     "test": "echo \"Error: no test specified\" && exit 1",
     "version": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/knledg/elm-localstorage-ports.git"
   },
   "bin": {
     "elm-localstorage-ports": "bin/elm-localstorage-ports"
