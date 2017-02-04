@@ -2,7 +2,7 @@
   "name": "elm-localstorage-ports",
   "version": "0.1.0",
   "description": "Generic Elm ports for interacting with LocalStorage",
-  "main": "lib/js/local-storage.js",
+  "main": "lib/js/localstorage-ports.js",
   "scripts": {
     "build": "node_modules/babel-cli/bin/babel.js  src/ --out-dir lib/js/",
     "test": "echo \"Error: no test specified\" && exit 1",
