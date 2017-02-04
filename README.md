@@ -6,11 +6,21 @@ Interface with LocalStorage in Elm.
 
 ### 1. Copy [`LocalStorage.elm`](src/LocalStorage.elm) into your Elm project
 
-```elm
-$ curl https://raw.githubusercontent.com/knledg/elm-localstorage-ports/master/src/LocalStorage.elm -o /path/to/elm/Ports/LocalStorage.elm
+```
+$ npm install -g elm-localstorage-ports
+$ cd /path/to/elm/project
+$ elm-localstorage-ports init
 ```
 
-(Change `/path/to/elm` to the root `elm` folder in your project.)
+You will be asked,
+
+```
+Are you inside one of the "source-directories" from your project's elm-package.json? (y/n)
+```
+
+Type `y` and `elm-localstorage-ports` will create all of the necessary Elm files.
+
+**Note:** `elm-localstorage-ports init` must be run from a directory in the `"source-directories\"` array in your project's `elm-package.json`. The above commands assume that `/path/to/elm/project` is the path containing `elm-package.json`, and that you have not modified `"source-directories"`.
 
 ### 2. Use it in your Elm code
 
