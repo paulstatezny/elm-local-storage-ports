@@ -8,6 +8,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "version": "npm run build"
   },
+  "bin": {
+    "elm-localstorage-ports": "bin/elm-localstorage-ports"
+  },
   "keywords": [
     "Elm",
     "ports",
