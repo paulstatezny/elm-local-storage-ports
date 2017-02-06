@@ -7,9 +7,9 @@ Interface with LocalStorage in Elm.
 ### 1. Copy [`LocalStorage.elm`](src/LocalStorage.elm) into your Elm project
 
 ```
-$ npm install -g elm-localstorage-ports
+$ npm install -g elm-local-storage-ports
 $ cd /path/to/elm/project
-$ elm-localstorage-ports init
+$ elm-local-storage-ports init
 ```
 
 You will be asked,
@@ -18,9 +18,9 @@ You will be asked,
 Are you inside one of the "source-directories" from your project's elm-package.json? (y/n)
 ```
 
-Type `y` and `elm-localstorage-ports` will create all of the necessary Elm files.
+Type `y` and `elm-local-storage-ports` will create all of the necessary Elm files.
 
-**Note:** `elm-localstorage-ports init` must be run from a directory in the `"source-directories\"` array in your project's `elm-package.json`. The above commands assume that `/path/to/elm/project` is the path containing `elm-package.json`, and that you have not modified `"source-directories"`.
+**Note:** `elm-local-storage-ports init` must be run from a directory in the `"source-directories\"` array in your project's `elm-package.json`. The above commands assume that `/path/to/elm/project` is the path containing `elm-package.json`, and that you have not modified `"source-directories"`.
 
 ### 2. Use it in your Elm code
 
@@ -78,7 +78,7 @@ update msg model =
 ```javascript
 var node = document.getElementById("my-elm-app-container");
 var myElmApp = Elm.MyElmApp.embed(node);
-var localStoragePorts = require("elm-localstorage-ports");
+var localStoragePorts = require("elm-local-storage-ports");
 
 localStoragePorts.register(myElmApp.ports);
 ```
@@ -89,4 +89,4 @@ localStoragePorts.register(myElmApp.ports);
 
 ## Questions or Problems?
 
-Feel free to create an issue in the [GitHub issue tracker](https://github.com/knledg/elm-localstorage-ports/issues).
+Feel free to create an issue in the [GitHub issue tracker](https://github.com/knledg/elm-local-storage-ports/issues).

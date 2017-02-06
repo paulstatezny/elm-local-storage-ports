@@ -1,8 +1,8 @@
 {
-  "name": "elm-localstorage-ports",
+  "name": "elm-local-storage-ports",
   "version": "0.1.1",
   "description": "Generic Elm ports for interacting with LocalStorage",
-  "main": "lib/js/localstorage-ports.js",
+  "main": "lib/js/local-storage-ports.js",
   "scripts": {
     "build": "node_modules/babel-cli/bin/babel.js  src/ --out-dir lib/js/",
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -10,22 +10,23 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/knledg/elm-localstorage-ports.git"
+    "url": "git+https://github.com/knledg/elm-local-storage-ports.git"
   },
   "bin": {
-    "elm-localstorage-ports": "bin/elm-localstorage-ports"
+    "elm-local-storage-ports": "bin/elm-local-storage-ports"
   },
   "keywords": [
     "Elm",
     "ports",
-    "localstorage"
+    "localstorage",
+    "local storage"
   ],
   "author": "Consolidated Knowledge",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/knledg/elm-localstorage-ports/issues"
+    "url": "https://github.com/knledg/elm-local-storage-ports/issues"
   },
-  "homepage": "https://github.com/knledg/elm-localstorage-ports#readme",
+  "homepage": "https://github.com/knledg/elm-local-storage-ports#readme",
   "devDependencies": {
     "babel-cli": "^6.22.2",
     "babel-core": "^6.22.1",

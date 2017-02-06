@@ -1,4 +1,4 @@
-## [v1.0.0]
-> February 1, 2017
+## [v0.1.2]
+> February 6, 2017
 
-- Initial release
+- Rename to `elm-local-storage-ports`
