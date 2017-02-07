@@ -1,4 +1,4 @@
-# Elm LocalStorage Ports
+# Elm LocalStorage Ports [![Build Status](https://travis-ci.org/knledg/elm-local-storage-ports.svg?branch=master)](https://travis-ci.org/knledg/elm-local-storage-ports)
 
 Interface with LocalStorage in Elm.
 
