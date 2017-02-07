@@ -1,6 +1,6 @@
 module.exports = {
   register: register,
-  samplePortName: "storageGetItem"
+  samplePortName: 'storageGetItem'
 };
 
 /**
@@ -23,31 +23,31 @@ function register(ports, log) {
   log = log || function() {};
 
   function storageGetItem(key) {
-    log("storageGetItem", key);
+    log('storageGetItem', key);
     const response = getLocalStorageItem(key);
 
-    log("storageGetItemResponse", key, response);
+    log('storageGetItemResponse', key, response);
     ports.storageGetItemResponse.send([key, response]);
   }
 
   function storageSetItem([key, value]) {
-    log("storageSetItem", key, value);
+    log('storageSetItem', key, value);
     setLocalStorageItem(key, value);
   }
 
   function storageRemoveItem(key) {
-    log("storageRemoveItem", key);
+    log('storageRemoveItem', key);
     window.localStorage.removeItem(key);
   }
 
   function storageClear() {
-    log("storageClear");
+    log('storageClear');
     window.localStorage.clear();
   }
 
   // A Set is a list with only unique values. (No duplication.)
   function storagePushToSet([key, value]) {
-    log("storagePushToSet", key, value);
+    log('storagePushToSet', key, value);
 
     const item = getLocalStorageItem(key);
     const list = Array.isArray(item) ? item : [];
@@ -60,12 +60,12 @@ function register(ports, log) {
   }
 
   function storageRemoveFromSet([key, value]) {
-    log("storageRemoveFromSet", key, value);
+    log('storageRemoveFromSet', key, value);
 
     const list = getLocalStorageItem(key);
 
     if (!Array.isArray(list)) {
-      log("storageRemoveFromSet [aborting; not a list]", key, value, list);
+      log('storageRemoveFromSet [aborting; not a list]', key, value, list);
       return;
     }
 
