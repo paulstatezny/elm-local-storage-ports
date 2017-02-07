@@ -12,9 +12,6 @@
     "type": "git",
     "url": "git+https://github.com/knledg/elm-local-storage-ports.git"
   },
-  "bin": {
-    "elm-local-storage-ports": "bin/elm-local-storage-ports"
-  },
   "keywords": [
     "Elm",
     "ports",
