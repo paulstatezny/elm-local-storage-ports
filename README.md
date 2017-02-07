@@ -62,6 +62,15 @@ update msg model =
 
 ### 4. Register your Elm app in JavaScript
 
+#### Using [Elm Router](https://github.com/knledg/elm-router)
+
+```javascript
+var localStoragePorts = require('elm-local-storage-ports');
+elmRouter.start(Elm, [localStoragePorts]);
+```
+
+#### Without Elm Router
+
 ```javascript
 var localStoragePorts = require("elm-local-storage-ports");
 var myElmApp = Elm.MyElmApp.embed(document.getElementById("my-elm-app-container"));
