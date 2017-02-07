@@ -4,73 +4,60 @@ Interface with LocalStorage in Elm.
 
 ## Quick Start
 
-### 1. Copy [`LocalStorage.elm`](src/LocalStorage.elm) into your Elm project
+### 1. Install via NPM
 
 ```
-$ npm install -g elm-local-storage-ports
-$ cd /path/to/elm/project
-$ elm-local-storage-ports init
+$ npm install --save elm-local-storage-ports
 ```
 
-You will be asked,
+### 2. In `elm-package.json`, import [`Ports/LocalStorage.elm`](lib/elm/Ports/LocalStorage.elm)
 
+Add `node_modules/elm-local-storage-ports/lib/elm` to your `source-directories`:
+
+```js
+// elm-package.json
+
+{
+    // ...
+
+    "source-directories": [
+        "../../node_modules/elm-local-storage-ports/lib/elm", // Exact path to node_modules may be different for you
+        "./"
+    ],
+
+    // ...
+}
 ```
-Are you inside one of the "source-directories" from your project's elm-package.json? (y/n)
-```
 
-Type `y` and `elm-local-storage-ports` will create all of the necessary Elm files.
-
-**Note:** `elm-local-storage-ports init` must be run from a directory in the `"source-directories\"` array in your project's `elm-package.json`. The above commands assume that `/path/to/elm/project` is the path containing `elm-package.json`, and that you have not modified `"source-directories"`.
-
-### 2. Use it in your Elm code
-
-#### Example
+### 3. Use it in your Elm code
 
 ```elm
-module MyElmApp.App exposing (main)
-
-
-import Json.Decode as JD
-import Ports.LocalStorage as LocalStorage
-
-
 type Msg
-  = SaveToLocalStorage String
-  | LoadFromStorage
-  | ReceiveFromLocalStorage (LocalStorage.Key, LocalStorage.Value)
+  = SaveSearch String
+  | RequestLastSearch
+  | ReceiveFromLocalStorage (String, Json.Decode.Value)
 
-
-type alias Model =
-  { favoriteFruit : String }
-
-  -- ...
 
 subscriptions : Model -> Sub Msg
 subscriptions model =
-  LocalStorage.storageGetItemResponse ReceiveFromLocalStorage
+  Ports.LocalStorage.storageGetItemResponse ReceiveFromLocalStorage
 
--- ...
 
 update : Msg -> Model -> (Model, Cmd Msg)
 update msg model =
   case msg of
-    SaveToLocalStorage fruit ->
-      ( { model | favoriteFruit = fruit }
-      , LocalStorage.storageSetItem ("favoriteFruit", fruit)
+    SaveSearch searchQuery ->
+      ( model
+      , Ports.LocalStorage.storageSetItem ("lastSearch", Json.Encode.string searchQuery)
       )
 
-    LoadFromStorage ->
-      (model, LocalStorage.storageGetItem "favoriteFruit")
+    RequestLastSearch ->
+      (model, Ports.LocalStorage.storageGetItem "lastSearch")
 
-    ReceiveFromLocalStorage ("favoriteFruit", value) ->
+    ReceiveFromLocalStorage ("lastSearch", value) ->
       case JD.decodeValue JD.string value of
-        Ok fruit ->
-          { model | favoriteFruit = fruit } ! []
-
-        Err _ ->
-          model ! []
-
--- ...
+        Ok searchQuery ->
+          -- Do something with searchQuery
 ```
 
 ### 3. Register your Elm app in JavaScript
