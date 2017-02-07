@@ -60,12 +60,11 @@ update msg model =
           -- Do something with searchQuery
 ```
 
-### 3. Register your Elm app in JavaScript
+### 4. Register your Elm app in JavaScript
 
 ```javascript
-var node = document.getElementById("my-elm-app-container");
-var myElmApp = Elm.MyElmApp.embed(node);
 var localStoragePorts = require("elm-local-storage-ports");
+var myElmApp = Elm.MyElmApp.embed(document.getElementById("my-elm-app-container"));
 
 localStoragePorts.register(myElmApp.ports);
 ```
