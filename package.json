@@ -1,6 +1,6 @@
 {
   "name": "elm-local-storage-ports",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Generic Elm ports for interacting with LocalStorage",
   "main": "lib/js/local-storage-ports.js",
   "scripts": {
