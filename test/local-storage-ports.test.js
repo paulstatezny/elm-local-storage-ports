@@ -3,16 +3,6 @@ const localStoragePorts = require('../src/local-storage-ports');
 let mockPorts;
 let mockLocalStorage;
 
-function portResponse(portFn, responseNumber) {
-  const call = portFn.send.mock.calls[0];
-
-  if (!call) {
-    throw `call number ${responseNumber || 0} doesn't exist`;
-  }
-
-  return call[responseNumber || 0];
-}
-
 function port(portFn) {
   return portFn.subscribe.mock.calls[0][0];
 }
@@ -49,8 +39,7 @@ describe('local-storage-ports', () => {
       mockLocalStorage.getItem = mockReturn('"myValue"');
       port(mockPorts.storageGetItem)('someKey');
 
-      expect(portResponse(mockPorts.storageGetItemResponse))
-        .toEqual(['someKey', 'myValue']);
+      expect(mockPorts.storageGetItemResponse.send).toHaveBeenCalledWith(['someKey', 'myValue']);
     });
   });
 
