@@ -68,7 +68,7 @@ update msg model =
   case msg of
     LogOut ->
       ( model
-      , LocalStorage.storageRemoveItem ("userId", JE.string userId)
+      , LocalStorage.storageRemoveItem "userId"
       )
 ```
 
