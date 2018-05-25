@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/knledg/elm-local-storage-ports.git"
+    "url": "git+https://github.com/paulstatezny/elm-local-storage-ports.git"
   },
   "keywords": [
     "Elm",
@@ -21,9 +21,9 @@
   "author": "Consolidated Knowledge",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/knledg/elm-local-storage-ports/issues"
+    "url": "https://github.com/paulstatezny/elm-local-storage-ports/issues"
   },
-  "homepage": "https://github.com/knledg/elm-local-storage-ports#readme",
+  "homepage": "https://github.com/paulstatezny/elm-local-storage-ports#readme",
   "devDependencies": {
     "babel-cli": "^6.22.2",
     "babel-core": "^6.22.1",

@@ -1,4 +1,4 @@
-# Elm LocalStorage Ports [![Build Status](https://travis-ci.org/knledg/elm-local-storage-ports.svg?branch=master)](https://travis-ci.org/knledg/elm-local-storage-ports)
+# Elm LocalStorage Ports [![Build Status](https://travis-ci.org/paulstatezny/elm-local-storage-ports.svg?branch=master)](https://travis-ci.org/paulstatezny/elm-local-storage-ports)
 
 Interface with LocalStorage in Elm.
 
@@ -62,7 +62,7 @@ update msg model =
 
 ### 4. Register your Elm app in JavaScript
 
-#### Using [Elm Router](https://github.com/knledg/elm-router)
+#### Using [Elm Router](https://github.com/paulstatezny/elm-router)
 
 ```javascript
 var localStoragePorts = require('elm-local-storage-ports');
@@ -84,4 +84,4 @@ localStoragePorts.register(myElmApp.ports);
 
 ## Questions or Problems?
 
-Feel free to create an issue in the [GitHub issue tracker](https://github.com/knledg/elm-local-storage-ports/issues).
+Feel free to create an issue in the [GitHub issue tracker](https://github.com/paulstatezny/elm-local-storage-ports/issues).
