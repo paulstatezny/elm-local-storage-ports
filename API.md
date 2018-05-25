@@ -175,3 +175,54 @@ subscriptions : Model -> Sub Msg
 subscriptions model =
   LocalStorage.storageGetItemResponse Receive
 ```
+
+### `storageOnKeyAdded`
+
+**Usage:**
+
+```elm
+import Ports.LocalStorage as LocalStorage
+
+
+type Msg
+  = KeyAdded (LocalStorage.Key, LocalStorage.Value)
+
+
+subscriptions : Model -> Sub Msg
+subscriptions model =
+  LocalStorage.storageOnKeyAdded KeyAdded
+```
+
+### `storageOnKeyRemoved`
+
+**Usage:**
+
+```elm
+import Ports.LocalStorage as LocalStorage
+
+
+type Msg
+  = KeyRemoved (LocalStorage.Key, LocalStorage.Value)
+
+
+subscriptions : Model -> Sub Msg
+subscriptions model =
+  LocalStorage.storageOnKeyRemoved KeyRemoved
+```
+
+### `storageOnKeyChanged`
+
+**Usage:**
+
+```elm
+import Ports.LocalStorage as LocalStorage
+
+
+type Msg
+  = KeyChanged (LocalStorage.Key, LocalStorage.NewValue, LocalStorage.OldValue)
+
+
+subscriptions : Model -> Sub Msg
+subscriptions model =
+  LocalStorage.storageOnKeyChanged KeyChanged
+```

@@ -3,6 +3,34 @@ module.exports = {
   samplePortName: 'storageGetItem'
 };
 
+const storageEventListenerPorts = [];
+
+window.addEventListener('storage', function(storageEvent) {
+  if (storageEvent.newValue === null) {
+    storageEventListenerPorts.forEach(function(ports) {
+      ports.storageOnKeyRemoved.send([
+        storageEvent.key,
+        storageEvent.oldValue
+      ]);
+    });
+  } else if (storageEvent.oldValue === null) {
+    storageEventListenerPorts.forEach(function(ports) {
+      ports.storageOnKeyAdded.send([
+        storageEvent.key,
+        storageEvent.newValue
+      ]);
+    });
+  } else {
+    storageEventListenerPorts.forEach(function(ports) {
+      ports.storageOnKeyChanged.send([
+        storageEvent.key,
+        storageEvent.oldValue,
+        storageEvent.newValue
+      ]);
+    });
+  }
+});
+
 /**
  * Subscribe the given Elm app ports to ports from the Elm LocalStorage ports module.
  *
@@ -19,6 +47,9 @@ function register(ports, log) {
   // Not in Storage API
   ports.storagePushToSet.subscribe(storagePushToSet);
   ports.storageRemoveFromSet.subscribe(storageRemoveFromSet);
+
+  // StorageEvent API
+  storageEventListenerPorts.push(ports);
 
   log = log || function() {};
 

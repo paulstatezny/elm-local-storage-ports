@@ -1,3 +1,8 @@
+## [v0.3.0]
+> May 25, 2018
+
+- Added the following subscriptions: `storageOnKeyRemoved`, `storageOnKeyAdded`, `storageOnKeyChanged`
+
 ## [v0.1.3]
 > February 7, 2017
 

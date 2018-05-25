@@ -5,7 +5,9 @@ import Json.Encode
 
 
 type alias Key = String
-type alias Value = Json.Encode.Value
+type alias Value = String
+type alias NewValue = Value
+type alias OldValue = Value
 
 
 {-| Subscriptions (Receive from JS)
@@ -13,6 +15,9 @@ type alias Value = Json.Encode.Value
 
 
 port storageGetItemResponse : ((Key, Value) -> msg) -> Sub msg
+port storageOnKeyRemoved : ((Key, Value) -> msg) -> Sub msg
+port storageOnKeyAdded : ((Key, Value) -> msg) -> Sub msg
+port storageOnKeyChanged : ((Key, NewValue, OldValue) -> msg) -> Sub msg
 
 
 {-| Commands (Send to JS)
